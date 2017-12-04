@@ -1,0 +1,34 @@
+AWSTemplateFormatVersion: '2010-09-09'
+
+Description: A Cloud9 development environment
+
+Parameters:
+
+  EC2InstanceSize:
+    Default: t2.medium
+    Description: Size of the EC2 instance running the IDE
+    Type: String
+
+  IdleTimeout:
+    Default: 30
+    Description: How many minutes idle before shutting down the IDE
+    Type: Number
+
+  Name:
+    Default: Tom's development environment
+    Description: The name of the environment to create
+    Type: String
+
+Resources:
+  IDE:
+    Type: AWS::Cloud9::EnvironmentEC2
+    Properties:
+      Repositories:
+        - RepositoryUrl: https://github.com/tomhillable/aws-cloud9-dev-environment.git
+          PathComponent: aws-cloud9-dev-environment
+        - RepositoryUrl: https://github.com/tomhillable/aws-datapipeline-s3-copy.git
+          PathComponent: aws-datapipeline-s3-copy
+      Description: A Cloud9 IDE
+      AutomaticStopTimeMinutes: !Ref IdleTimeout
+      InstanceType: !Ref EC2InstanceSize
+      Name: !Ref Name
