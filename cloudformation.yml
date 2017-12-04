@@ -26,8 +26,6 @@ Resources:
       Repositories:
         - RepositoryUrl: https://github.com/tomhillable/aws-cloud9-dev-environment.git
           PathComponent: aws-cloud9-dev-environment
-        - RepositoryUrl: https://github.com/tomhillable/aws-datapipeline-s3-copy.git
-          PathComponent: aws-datapipeline-s3-copy
       Description: A Cloud9 IDE
       AutomaticStopTimeMinutes: !Ref IdleTimeout
       InstanceType: !Ref EC2InstanceSize
