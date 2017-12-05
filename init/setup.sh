@@ -23,7 +23,7 @@ do
     do
         if [ ! -d "${HOME}/environment/${repo}" ]; then
             echo "Cloning repo ${repo}"
-            git clone --depth 1 https://github.com/${repo}.git ${HOME}/environment/github.com/${repo}
+            git clone -n --depth 1 https://github.com/${repo}.git ${HOME}/environment/github.com/${repo}
         fi
     done
 done
