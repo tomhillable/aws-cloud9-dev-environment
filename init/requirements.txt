@@ -1,0 +1,3 @@
+awscli
+pycodestyle
+-e git://github.com/tomhillable/git-credential-parameter-store.git#egg=git-credential-parameter-store
